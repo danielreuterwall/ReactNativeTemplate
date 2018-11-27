@@ -5,7 +5,7 @@ This is a React Native setup I really like. A bit brief at the moment but that's
 More to come
 - [x] Typescript
 - [x] React navigation
-- [ ] Redux
+- [x] Redux
 - [ ] Basic authentication flow with redux
 - [ ] Open API client generation
 - [ ] Launch icons
