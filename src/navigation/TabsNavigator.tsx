@@ -26,6 +26,23 @@ export default createBottomTabNavigator(
     }
   },
   {
-    initialRouteName: "Tab1"
+    initialRouteName: "Tab1",
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarOnPress: ({ navigation, defaultHandler }) => {
+        let route = navigation.state;
+
+        // Logic for closing stacked screens when navigating through the tab bar
+        if (route.index > 0) {
+          navigation.dispatch(
+            StackActions.popToTop({
+              key: route.key,
+              immediate: !navigation.isFocused()
+            })
+          );
+        } else {
+          defaultHandler();
+        }
+      }
+    })
   }
 );
